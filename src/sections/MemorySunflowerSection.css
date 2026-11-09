@@ -1,0 +1,328 @@
+.memory-sunflower-section {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 249, 233, 0) 0%,
+    rgba(248, 230, 160, 0.24) 50%,
+    rgba(255, 249, 233, 0) 100%
+  );
+}
+
+.sunflower-experience-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.2rem;
+  align-items: center;
+}
+
+.sunflower-stage-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sunflower-svg-wrapper {
+  width: 100%;
+  max-width: 495px;
+  aspect-ratio: 560 / 590;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interactive-sunflower-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 18px 34px rgba(118, 85, 47, 0.14));
+}
+
+.interactive-petal {
+  cursor: pointer;
+  outline: none;
+}
+
+.interactive-petal__inner {
+  transition: transform 0.36s var(--ease-out-editorial), filter 0.36s ease;
+}
+
+@media (hover: hover) {
+  .interactive-petal:hover .interactive-petal__inner {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 8px 16px rgba(217, 154, 34, 0.42));
+  }
+}
+
+.interactive-petal:focus-visible .interactive-petal__inner,
+.interactive-petal.is-selected .interactive-petal__inner {
+  transform: translateY(-12px);
+  filter: drop-shadow(0 10px 22px rgba(217, 154, 34, 0.56));
+}
+
+/* Medidor de floración */
+.sunflower-bloom-meter {
+  width: 100%;
+  max-width: 390px;
+  margin-top: 0.75rem;
+}
+
+.sunflower-bloom-meter__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--color-ink-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.sunflower-bloom-meter__labels strong {
+  color: var(--color-warm-brown);
+}
+
+.sunflower-bloom-meter__track {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(217, 154, 34, 0.18);
+  overflow: hidden;
+}
+
+.sunflower-bloom-meter__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-olive) 0%, var(--color-honey) 55%, var(--color-sunflower) 100%);
+  transition: width 0.42s var(--ease-out-editorial);
+}
+
+.petal-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+  max-width: 500px;
+}
+
+.petal-quick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  min-height: 38px;
+  padding: 0.38rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 254, 248, 0.88);
+  border: 1px solid rgba(217, 154, 34, 0.34);
+  color: var(--color-ink-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.22s ease;
+}
+
+.petal-quick-pill:hover {
+  border-color: var(--color-honey);
+  background: var(--color-warm-white);
+  transform: translateY(-1px);
+}
+
+.petal-quick-pill.is-visited {
+  background: rgba(248, 230, 160, 0.38);
+  color: var(--color-warm-brown);
+}
+
+.petal-quick-pill.is-selected {
+  background: var(--color-olive);
+  border-color: var(--color-olive);
+  color: var(--color-warm-white);
+}
+
+.sunflower-all-visited-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.15rem;
+  padding: 0.52rem 1.15rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #FFF8DC 0%, #F8E6A0 100%);
+  border: 1px solid rgba(217, 154, 34, 0.52);
+  color: var(--color-warm-brown);
+  font-size: 0.84rem;
+  font-weight: 600;
+  box-shadow: 0 8px 22px -6px rgba(217, 154, 34, 0.32);
+}
+
+.sunflower-detail-desktop {
+  display: none;
+}
+
+.petal-memory-card,
+.petal-empty-invitation {
+  background: linear-gradient(165deg, #FFFEF9 0%, #FCF5E3 100%);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(217, 154, 34, 0.45);
+  padding: clamp(1.45rem, 3vw, 2.3rem);
+  box-shadow: var(--shadow-elevated);
+}
+
+.petal-empty-invitation {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  gap: 1.05rem;
+}
+
+.petal-empty-invitation__icon {
+  color: var(--color-honey);
+}
+
+.petal-empty-invitation__title {
+  font-size: var(--text-2xl);
+  color: var(--color-warm-brown);
+  max-width: 360px;
+}
+
+.petal-empty-invitation__text {
+  color: var(--color-ink-secondary);
+  max-width: 400px;
+  margin-bottom: 0.5rem;
+}
+
+.petal-memory-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.petal-memory-card__badge {
+  display: inline-block;
+  padding: 0.3rem 0.78rem;
+  border-radius: var(--radius-pill);
+  background: rgba(248, 230, 160, 0.48);
+  color: var(--color-warm-brown);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.petal-memory-card__close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  color: var(--color-ink-secondary);
+}
+
+.petal-memory-card__close:hover {
+  background: rgba(118, 85, 47, 0.08);
+  color: var(--color-warm-brown);
+}
+
+.petal-memory-card__photo {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border: var(--border-delicate);
+}
+
+.petal-memory-card__title {
+  font-size: clamp(1.55rem, 1.32rem + 0.75vw, 1.98rem);
+  color: var(--color-warm-brown);
+  text-align: center;
+  margin-bottom: 1.35rem;
+}
+
+.petal-memory-card__message {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-ink-primary);
+  margin-bottom: 1.45rem;
+}
+
+.petal-memory-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.petal-next-btn {
+  min-height: 46px;
+  padding: 0.7rem 1.35rem;
+  font-size: var(--text-sm);
+}
+
+/* Modal táctil en dispositivos móviles */
+.petal-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(45, 30, 14, 0.62);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.petal-mobile-sheet {
+  width: 100%;
+  max-width: 460px;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  border: 1px solid rgba(217, 154, 34, 0.45);
+  box-shadow: var(--shadow-elevated);
+}
+
+.petal-mobile-close-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(118, 85, 47, 0.08);
+  color: var(--color-warm-brown);
+}
+
+.petal-mobile-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.petal-mobile-back,
+.petal-mobile-next {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 380px) {
+  .petal-mobile-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 940px) {
+  .sunflower-experience-layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
+  }
+
+  .sunflower-detail-desktop {
+    display: block;
+  }
+}

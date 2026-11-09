@@ -1,0 +1,293 @@
+.essence-scene {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 249, 233, 0) 0%,
+    rgba(248, 230, 160, 0.24) 50%,
+    rgba(255, 249, 233, 0) 100%
+  );
+}
+
+.essence-scene__lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.24rem, 1.12rem + 0.5vw, 1.5rem);
+  line-height: 1.58;
+  color: var(--color-ink-primary);
+  margin-bottom: 0.9rem;
+}
+
+.essence-constellation {
+  position: relative;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.essence-constellation__center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.essence-constellation__medallion {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 204px;
+  height: 204px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFEF8 0%, #FDF2CF 100%);
+  border: 1.5px solid rgba(217, 154, 34, 0.45);
+  box-shadow: var(--shadow-card), var(--shadow-glow-gold);
+}
+
+.essence-mandala-ring {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  pointer-events: none;
+}
+
+.essence-constellation__center-label {
+  font-family: var(--font-script);
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin-top: -0.35rem;
+}
+
+.essence-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+}
+
+.essence-pillar-card {
+  position: relative;
+  height: 100%;
+  padding: 1.5rem 1.55rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 254, 248, 0.9);
+  border: var(--border-delicate);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.essence-pillar-card:hover,
+.essence-pillar-card.is-highlighted {
+  background: var(--color-warm-white);
+  border-color: rgba(217, 154, 34, 0.62);
+  box-shadow: var(--shadow-card), 0 0 26px rgba(244, 197, 66, 0.22);
+}
+
+.essence-pillar-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.essence-pillar-card__icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFF7D1 0%, #F8E6A0 100%);
+  border: 1px solid rgba(217, 154, 34, 0.42);
+  color: var(--color-warm-brown);
+  flex-shrink: 0;
+}
+
+.essence-pillar-card__virtue {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+  flex: 1;
+}
+
+.essence-pillar-card__num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-honey);
+}
+
+.essence-pillar-card__title {
+  font-size: clamp(1.32rem, 1.18rem + 0.45vw, 1.55rem);
+  color: var(--color-warm-brown);
+  margin-bottom: 0.55rem;
+}
+
+.essence-pillar-card__desc {
+  font-size: var(--text-sm);
+  line-height: 1.68;
+  color: var(--color-ink-secondary);
+}
+
+/* Bloque emotivo: Su papel como madre y la frase especial */
+.motherhood-tribute-box {
+  position: relative;
+  padding: clamp(1.75rem, 4.5vw, 3.2rem);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  border: 1.5px solid rgba(217, 154, 34, 0.42);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+}
+
+.motherhood-corner {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.motherhood-corner--tl {
+  top: 0.35rem;
+  left: 0.35rem;
+}
+
+.motherhood-corner--br {
+  bottom: 0.35rem;
+  right: 0.35rem;
+  transform: rotate(180deg);
+}
+
+.motherhood-tribute__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.1rem;
+  align-items: center;
+}
+
+.motherhood-tribute__title {
+  font-size: var(--text-2xl);
+  color: var(--color-warm-brown);
+  margin-bottom: 1rem;
+}
+
+.motherhood-tribute__paragraph {
+  font-size: var(--text-base);
+  line-height: 1.78;
+  color: var(--color-ink-primary);
+  margin-bottom: 1.05rem;
+}
+
+.motherhood-tribute__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.magic-child-quote-card {
+  position: relative;
+  padding: clamp(1.6rem, 3.5vw, 2.35rem);
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at top right, #FFF9E9 0%, #FAEBBE 100%);
+  border: 1.5px solid rgba(217, 154, 34, 0.55);
+  box-shadow: var(--shadow-card), var(--shadow-glow-gold);
+  text-align: center;
+  transition: transform 0.4s var(--ease-out-editorial), box-shadow 0.4s ease;
+}
+
+.magic-child-quote-card.is-illuminated {
+  transform: scale(1.018);
+  box-shadow:
+    0 24px 56px -12px rgba(217, 154, 34, 0.42),
+    0 0 44px rgba(244, 197, 66, 0.52);
+  border-color: var(--color-honey);
+}
+
+.magic-child-quote-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.34rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 254, 248, 0.86);
+  color: var(--color-olive);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.magic-child-quote-card__photo {
+  width: 100%;
+  max-width: 310px;
+  aspect-ratio: 4 / 3;
+  margin-inline: auto;
+  margin-bottom: 1.1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 254, 248, 0.92);
+  box-shadow: 0 12px 26px -8px rgba(118, 85, 47, 0.24);
+}
+
+.magic-child-quote-card__quote {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.48rem, 1.25rem + 0.85vw, 1.98rem);
+  line-height: 1.32;
+  color: var(--color-warm-brown);
+  text-wrap: balance;
+}
+
+.magic-child-quote-card__divider {
+  margin-block: 1.15rem;
+}
+
+.magic-child-quote-card__context {
+  font-size: var(--text-sm);
+  line-height: 1.66;
+  color: var(--color-ink-primary);
+  margin-bottom: 1.25rem;
+}
+
+.magic-child-quote-card__spark-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 254, 248, 0.9);
+  border: 1px solid rgba(217, 154, 34, 0.48);
+  color: var(--color-warm-brown);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.magic-child-quote-card__spark-btn:hover {
+  background: var(--color-warm-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(217, 154, 34, 0.25);
+}
+
+@media (min-width: 680px) {
+  .essence-pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 980px) {
+  .essence-pillars-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .motherhood-tribute__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 2.75rem;
+  }
+}

@@ -1,0 +1,367 @@
+.letter-section {
+  position: relative;
+}
+
+.letter-stage-container {
+  max-width: 940px;
+  margin-inline: auto;
+}
+
+/* Sobre artesanal cerrado */
+.envelope-card {
+  position: relative;
+  max-width: 600px;
+  margin-inline: auto;
+  padding: clamp(2.6rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3.2rem);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #FFFDF6 0%, #F9EED2 100%);
+  border: 1.5px solid rgba(217, 154, 34, 0.48);
+  box-shadow: var(--shadow-elevated), 0 0 38px rgba(244, 197, 66, 0.16);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+  overflow: hidden;
+}
+
+.envelope-flap-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 165px;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 154, 34, 0.16) 0%,
+    rgba(255, 254, 248, 0.04) 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-bottom: 1px solid rgba(217, 154, 34, 0.25);
+  pointer-events: none;
+}
+
+/* Estampilla postal botánica */
+.envelope-postage-stamp {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.58rem;
+  background: #FFFDF7;
+  border: 1.5px dashed rgba(185, 125, 22, 0.55);
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(118, 85, 47, 0.1);
+  transform: rotate(3deg);
+}
+
+.envelope-postage-stamp__top {
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-olive);
+}
+
+.envelope-postage-stamp__age {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--color-warm-brown);
+  line-height: 1.1;
+}
+
+.envelope-postage-stamp__sub {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-honey);
+}
+
+.envelope-eyebrow-tag {
+  position: relative;
+  z-index: 2;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+}
+
+.envelope-recipient {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-script);
+  font-size: clamp(1.75rem, 1.4rem + 1.1vw, 2.3rem);
+  color: var(--color-warm-brown);
+}
+
+.envelope-seal-btn {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: transform 0.35s var(--ease-out-editorial), filter 0.35s ease;
+}
+
+.envelope-seal-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 197, 66, 0.42) 0%, rgba(244, 197, 66, 0) 70%);
+  animation: waxPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes waxPulse {
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.16);
+    opacity: 1;
+  }
+}
+
+.envelope-seal-btn:hover {
+  transform: scale(1.08) rotate(4deg);
+  filter: drop-shadow(0 12px 22px rgba(155, 104, 16, 0.38));
+}
+
+.envelope-wax-svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 16px rgba(118, 85, 47, 0.25));
+}
+
+.envelope-open-cta {
+  position: relative;
+  z-index: 2;
+}
+
+/* Papel de carta desplegado */
+.stationery-sheet {
+  position: relative;
+  background-color: var(--color-warm-white);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 35px,
+    rgba(217, 154, 34, 0.07) 36px
+  );
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(217, 154, 34, 0.42);
+  box-shadow: var(--shadow-elevated), 0 0 0 8px rgba(255, 254, 248, 0.56);
+  padding: clamp(1.5rem, 4.5vw, 3.25rem);
+  overflow: hidden;
+}
+
+.stationery-corner {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.stationery-corner--tr {
+  top: 0.5rem;
+  right: 0.5rem;
+  transform: scaleX(-1);
+}
+
+.stationery-corner--bl {
+  bottom: 0.5rem;
+  left: 0.5rem;
+  transform: scaleY(-1);
+}
+
+.stationery-top-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.85rem;
+  border-bottom: var(--border-delicate);
+}
+
+.stationery-date-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--color-ink-soft);
+}
+
+.stationery-fold-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: rgba(248, 230, 160, 0.36);
+  color: var(--color-warm-brown);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.stationery-fold-btn:hover {
+  background: rgba(244, 197, 66, 0.42);
+}
+
+.stationery-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stationery-polaroid-aside {
+  display: flex;
+  justify-content: center;
+}
+
+.stationery-polaroid {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 295px;
+  padding: 0.85rem 0.85rem 1.25rem;
+  background: #FFFEFA;
+  border: 1px solid rgba(217, 154, 34, 0.34);
+  border-radius: 12px;
+  box-shadow: 0 14px 32px -10px rgba(71, 48, 23, 0.18);
+  transform: rotate(-1.5deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s var(--ease-out-editorial);
+}
+
+@media (hover: hover) {
+  .stationery-polaroid:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+}
+
+.stationery-tape {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 86px;
+  height: 24px;
+  background: rgba(248, 230, 160, 0.72);
+  border: 1px dashed rgba(217, 154, 34, 0.38);
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(71, 48, 23, 0.08);
+}
+
+.stationery-polaroid__photo {
+  width: 100%;
+  aspect-ratio: 4 / 4.6;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+}
+
+.stationery-polaroid__caption {
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 1.38rem;
+  color: var(--color-warm-brown);
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+}
+
+.stationery-polaroid__badge {
+  display: inline-block;
+  padding: 0.22rem 0.68rem;
+  border-radius: var(--radius-pill);
+  background: rgba(89, 107, 56, 0.12);
+  color: var(--color-olive-deep);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stationery-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.stationery-salutation {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 1.65rem + 1vw, 2.5rem);
+  font-weight: 600;
+  color: var(--color-warm-brown);
+  margin-bottom: 1rem;
+}
+
+.stationery-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 150px;
+  margin-bottom: 2rem;
+}
+
+.stationery-paragraph {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.82;
+  color: var(--color-ink-primary);
+  white-space: pre-line;
+}
+
+.stationery-signature-block {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: var(--border-delicate);
+}
+
+.stationery-closing {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-ink-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.stationery-signature {
+  font-family: var(--font-script);
+  font-size: clamp(1.95rem, 1.6rem + 0.95vw, 2.45rem);
+  color: var(--color-warm-brown);
+  line-height: 1.25;
+}
+
+.stationery-divider {
+  margin-top: 1.85rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 520px) {
+  .envelope-postage-stamp {
+    position: static;
+    transform: none;
+    margin-bottom: -0.35rem;
+  }
+}
+
+@media (min-width: 840px) {
+  .stationery-layout {
+    grid-template-columns: 285px minmax(0, 1fr);
+    gap: 2.75rem;
+  }
+}

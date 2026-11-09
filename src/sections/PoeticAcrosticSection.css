@@ -1,0 +1,293 @@
+.acrostic-section {
+  position: relative;
+}
+
+.acrostic-main-subtitle {
+  font-family: var(--font-script);
+  font-size: clamp(1.75rem, 1.45rem + 1vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: -0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.acrostic-controls-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.95rem;
+  margin-top: 1.5rem;
+}
+
+.acrostic-word-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.acrostic-word-tab {
+  padding: 0.45rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 254, 248, 0.9);
+  border: 1px solid rgba(217, 154, 34, 0.38);
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-warm-brown);
+  box-shadow: 0 4px 12px -4px rgba(118, 85, 47, 0.1);
+  transition: background-color 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+
+.acrostic-word-tab:hover {
+  background: var(--color-warm-white);
+  border-color: var(--color-honey);
+  transform: translateY(-2px);
+}
+
+.acrostic-illuminate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.46rem 1.15rem;
+  border-radius: var(--radius-pill);
+  background: rgba(248, 230, 160, 0.38);
+  border: 1px solid rgba(217, 154, 34, 0.48);
+  color: var(--color-warm-brown);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.acrostic-illuminate-btn:hover {
+  background: rgba(244, 197, 66, 0.42);
+  transform: translateY(-1px);
+}
+
+.acrostic-illuminate-btn.is-active {
+  background: var(--color-olive);
+  border-color: var(--color-olive);
+  color: var(--color-warm-white);
+}
+
+.acrostic-folios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.95rem;
+  align-items: start;
+}
+
+.acrostic-folio {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-warm-white) 0%, #FFFDF5 100%);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(217, 154, 34, 0.42);
+  padding: clamp(1.55rem, 4vw, 2.55rem) clamp(1.3rem, 3.8vw, 2.4rem);
+  box-shadow: var(--shadow-card);
+  scroll-margin-top: 5.5rem;
+  transition: transform 0.42s var(--ease-out-editorial), box-shadow 0.42s ease;
+}
+
+@media (hover: hover) {
+  .acrostic-folio:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+.acrostic-folio::before {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border-radius: calc(var(--radius-lg) - 6px);
+  border: 1px solid rgba(217, 154, 34, 0.18);
+  pointer-events: none;
+}
+
+.acrostic-folio__watermark {
+  position: absolute;
+  top: -0.6rem;
+  right: 1rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(6rem, 10vw, 8.5rem);
+  line-height: 1;
+  color: rgba(217, 154, 34, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+.acrostic-folio__header {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.35rem;
+  border-bottom: var(--border-delicate);
+}
+
+.acrostic-folio__subtitle {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-olive);
+  margin-bottom: 0.35rem;
+}
+
+.acrostic-folio__word {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 1.2rem + 0.7vw, 1.82rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-warm-brown);
+}
+
+.acrostic-folio__theme {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-ink-soft);
+  margin-top: 0.25rem;
+}
+
+.acrostic-verses {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Hilo dorado editorial que conecta las iniciales */
+.acrostic-verses::before {
+  content: '';
+  position: absolute;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.2rem;
+  width: 1.5px;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 154, 34, 0.14) 0%,
+    rgba(217, 154, 34, 0.48) 50%,
+    rgba(217, 154, 34, 0.14) 100%
+  );
+  pointer-events: none;
+}
+
+.acrostic-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.32rem 0.45rem 0.32rem 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.acrostic-line:hover,
+.acrostic-line.is-highlighted {
+  background: rgba(248, 230, 160, 0.32);
+  transform: translateX(4px);
+}
+
+.acrostic-initial {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFF9E9 0%, #F8E6A0 100%);
+  border: 1px solid rgba(217, 154, 34, 0.58);
+  box-shadow: 0 4px 10px -3px rgba(118, 85, 47, 0.15);
+  font-family: var(--font-serif);
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: var(--color-warm-brown);
+  transition: all 0.3s ease;
+}
+
+.acrostic-line:hover .acrostic-initial,
+.acrostic-line.is-highlighted .acrostic-initial {
+  background: linear-gradient(135deg, #F4C542 0%, #D99A22 100%);
+  color: #FFFEF8;
+  border-color: #B97D16;
+  box-shadow: 0 0 16px rgba(244, 197, 66, 0.6);
+  transform: scale(1.08);
+}
+
+.acrostic-verse {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.12rem, 1.02rem + 0.35vw, 1.28rem);
+  line-height: 1.52;
+  color: var(--color-ink-primary);
+  padding-block: 0.1rem;
+}
+
+.acrostic-verse__dropcap {
+  font-weight: 700;
+  color: var(--color-warm-brown);
+}
+
+.acrostic-closing-dedication {
+  max-width: 720px;
+  margin-inline: auto;
+  margin-top: clamp(2.6rem, 5vw, 3.8rem);
+  padding: clamp(1.65rem, 4vw, 2.4rem) clamp(1.4rem, 4vw, 2.6rem);
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at top, #FFFEF8 0%, #FBF0CD 100%);
+  border: 1.5px solid rgba(217, 154, 34, 0.55);
+  box-shadow: var(--shadow-elevated), var(--shadow-glow-gold);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.acrostic-closing-dedication__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.55rem, 1.3rem + 0.9vw, 2.15rem);
+  line-height: 1.32;
+  color: var(--color-warm-brown);
+  text-wrap: balance;
+}
+
+.acrostic-closing-dedication__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.88rem;
+  border-radius: var(--radius-pill);
+  background: rgba(89, 107, 56, 0.12);
+  color: var(--color-olive-deep);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.acrostic-bottom-ornament {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 920px) {
+  .acrostic-folios-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem;
+  }
+}

@@ -1,0 +1,61 @@
+:root {
+  /* Paleta cromática base — 43 años floreciendo */
+  --color-cream: #FFF9E9;
+  --color-vanilla: #F8E6A0;
+  --color-sunflower: #F4C542;
+  --color-honey: #D99A22;
+  --color-olive: #596B38;
+  --color-warm-brown: #76552F;
+  --color-warm-white: #FFFEF8;
+
+  /* Matices editoriales derivados para contraste accesible (WCAG AA/AAA) */
+  --color-ink-primary: #473017;
+  --color-ink-secondary: #6D4E2A;
+  --color-ink-soft: #85643E;
+  --color-olive-deep: #445329;
+  --color-olive-soft: rgba(89, 107, 56, 0.11);
+  --color-cream-elevated: #FFFDF5;
+  --color-linen: #FAF0D7;
+
+  /* Bordes y líneas delicadas */
+  --border-delicate: 1px solid rgba(118, 85, 47, 0.14);
+  --border-gold: 1px solid rgba(217, 154, 34, 0.34);
+  --border-olive: 1px solid rgba(89, 107, 56, 0.24);
+
+  /* Sombras naturales y cálidas */
+  --shadow-soft: 0 10px 30px -10px rgba(71, 48, 23, 0.08), 0 2px 8px -2px rgba(71, 48, 23, 0.04);
+  --shadow-card: 0 18px 44px -14px rgba(71, 48, 23, 0.12), 0 4px 14px -4px rgba(71, 48, 23, 0.06);
+  --shadow-elevated: 0 28px 68px -18px rgba(71, 48, 23, 0.18), 0 8px 22px -6px rgba(71, 48, 23, 0.08);
+  --shadow-glow-gold: 0 0 36px rgba(244, 197, 66, 0.28);
+
+  /* Familias tipográficas */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  /* Escala tipográfica fluida (Mobile First) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.82rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.22vw, 1.08rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.38vw, 1.28rem);
+  --text-xl: clamp(1.35rem, 1.2rem + 0.75vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.45rem + 1.4vw, 2.5rem);
+  --text-3xl: clamp(2.15rem, 1.72rem + 2.1vw, 3.45rem);
+  --text-hero: clamp(2.45rem, 1.85rem + 3vw, 4.4rem);
+
+  /* Espaciado fluido */
+  --space-section: clamp(4.5rem, 8vw, 8.25rem);
+  --container-max: 1140px;
+  --container-narrow: 780px;
+
+  /* Radios orgánicos */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 9999px;
+
+  /* Curvas de animación cinematográficas */
+  --ease-out-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
